@@ -449,7 +449,7 @@ The developer assumes **no responsibility** for misuse.
 
 **CodeAlpha Internship Project**
 
-GitHub: `https://github.com/Harsh-jethva`
+GitHub: `https://github.com/DeepTandel045`
 
 ---
 
