@@ -1,195 +1,462 @@
-# 🔍 CodeAlpha — Cybernetic Protocol Intelligence & Network Sniffer
+# 🔍 CodeAlpha — Advanced Network Sniffer & Traffic Analyzer
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-2.0%2B-000000?style=for-the-badge&logo=flask&logoColor=white)
-![Socket.io](https://img.shields.io/badge/Socket.io-4.0%2B-010101?style=for-the-badge&logo=socketdotio&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-2.0%2B-000000?style=for-the-badge\&logo=flask\&logoColor=white)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-4.0%2B-010101?style=for-the-badge\&logo=socketdotio\&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-0078D6?style=for-the-badge\&logo=windows\&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 
-**A highly advanced, cross-platform packet sniffer and real-time network traffic analyzer featuring both a professional command-line interface (CLI) and a premium, responsive Web-based Intelligence Dashboard.**
+### 🚀 Real-Time Packet Sniffer with Live Web Dashboard, Analytics, Logging & PDF Reporting
+
+**A powerful, cross-platform network packet sniffer and traffic analyzer built using Python, Scapy, Flask, and Socket.IO. Monitor live traffic in real time using both a Command-Line Interface (CLI) and an Interactive Web Dashboard.**
 
 </div>
 
 ---
 
-## 📖 Overview
+# 📖 Overview
 
-This repository contains the **CodeAlpha Basic Network Sniffer**, which has been engineered into a powerful, dual-interface network analysis suite. Under the hood, it utilizes **Scapy** to hook into network sockets, capture live frames, and perform deep packet inspection across multiple layers of the OSI model.
+This project is an **advanced real-time network packet sniffer and traffic analyzer** developed as part of the **CodeAlpha Internship Program**.
 
-The application can be operated in two distinct modes:
-1. **Interactive Web Dashboard (`web_app.py`)** — A stunning, glassmorphic web dashboard ("Cybernetic Protocol Intelligence") with live packet streams, an interactive OSI-layer decoder, live hex/ASCII payload viewers, dynamic protocol charts, and professional PDF report exports.
-2. **Terminal Sniffer Engine (`main.py`)** — A clean, color-coded command-line tool with thread-safe live metrics, customizable Berkeley Packet Filters (BPF), and structured file-logging capabilities (TXT, CSV, JSON).
+The system captures live network traffic, analyzes packet structures across multiple **OSI layers**, detects major protocols, applies **Berkeley Packet Filters (BPF)**, generates real-time analytics, and supports exporting logs in multiple formats.
 
----
+The project supports **two powerful modes**:
 
-## ✨ Features
+## 🖥️ 1. CLI Mode (`main.py`)
 
-### 🖥️ 1. Cybernetic Web Dashboard (`web_app.py`)
-- 📡 **Real-time WebSocket Streaming** — Packets are captured at the kernel level and streamed instantaneously to the browser interface via Socket.IO.
-- 📈 **Dynamic Visual Analytics** — Live doughnut and horizontal bar charts (powered by Chart.js) tracking protocol distributions and the top active source/destination IP addresses.
-- 🔍 **Interactive OSI Layer Dissection** — Click on any packet row to inspect its exact hierarchical layers:
-  - **Layer 2 (Data Link)**: Source & Destination MAC addresses.
-  - **Layer 3 (Network)**: Source & Destination IP addresses.
-  - **Layer 4 (Transport)**: Port numbers, TCP/UDP headers, flags, and types.
-  - **Layer 7 (Application)**: Protocol detection (HTTP, HTTPS, DNS) and load decoding.
-- 🧾 **Raw Payload Hex Dump** — View side-by-side hexadecimal offsets and ASCII previews of packet data for deep inspection.
-- 💾 **Instant PDF Session Exports** — Export a beautifully formatted, dark-themed **Session Capture Report** including statistics, protocol distributions, active charts, and a detailed packet stream log with a single click.
-- 🔀 **Active Search and Filters** — Filter packets dynamically as they arrive by searching any property (MAC, IP, Port, Protocol, or payload contents).
+A fast, terminal-based packet sniffer featuring:
 
-### ⚙️ 2. Terminal Sniffer Engine (`main.py`)
-- 🎨 **ANSI-colored Console Logs** — Easy-to-read, color-coded protocol tags, addressing indicators (`Source -> Destination`), and payload summaries.
-- 🗃️ **Multi-Format Local Logging** — Automatically saves traffic to timestamped files inside the `captures/` folder in your choice of **TXT**, **CSV**, or **JSON** arrays.
-- 🔢 **Thread-Safe Metrics Loop** — Spawns a background thread that calculates and outputs tabulate-formatted summary matrices of network metrics every 15 seconds.
-- ⚡ **Kernel-Level BPF Filtering** — Filter incoming traffic efficiently at the OS kernel level using standard Berkeley Packet Filters.
+* 🎨 Color-coded output
+* 🔎 Protocol filtering
+* 📊 Auto statistics every 15 seconds
+* 💾 Multi-format logging (`CSV`, `JSON`, `TXT`)
+* ⚡ High-performance BPF filtering
 
----
+## 🌐 2. Web Dashboard Mode (`web_app.py`)
 
-## 📋 Requirements & Dependencies
+A modern **localhost-based dashboard** with:
 
-The project relies on Python's standard library combined with lightweight, high-performance networking packages:
-
-| Dependency | Purpose | Scope |
-|---|---|---|
-| `scapy` | Sockets manipulation and packet decoding | Core Engine |
-| `flask` | Lightweight Web Server | Web Dashboard |
-| `flask-socketio` | Real-time WebSocket communications | Web Dashboard |
-| `colorama` | Cross-platform terminal styling | CLI Engine |
-| `tabulate` | Terminal metric tables | CLI Engine |
-
-### 🪟 Windows Requirements
-- **Npcap** or **WinPcap** must be installed (installed automatically if you have Wireshark, or available from [Npcap.com](https://npcap.com/)).
-- Must be executed inside a command window launched with **Administrator privileges**.
-
-### 🐧 Linux Requirements
-- Must be executed with **root privileges** (`sudo`) to bind raw network interface sockets.
+* ▶️ Start packet capture
+* ⏹️ Stop capture
+* 🔍 Search captured packets
+* 📈 Live analytics & protocol charts
+* 📄 Download PDF reports
+* 📡 Real-time packet streaming using WebSockets
 
 ---
 
-## 🚀 Installation & Setup
+# ✨ Features
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/network-sniffer.git
-   cd network-sniffer
-   ```
+### 📡 Real-Time Packet Sniffing
 
-2. **Install the dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Capture live packets directly from the network interface using **Scapy**.
+
+### 🌐 Interactive Web Dashboard
+
+Run:
+
+```bash
+python web_app.py
+```
+
+Then open:
+
+```txt
+http://127.0.0.1:5000
+```
+
+Dashboard features:
+
+✅ Start Sniffing
+✅ Stop Sniffing
+✅ Search Packets
+✅ Real-Time Packet Table
+✅ Protocol Analytics
+✅ Top Source/Destination IP Analysis
+✅ Download PDF Report
 
 ---
 
-## 💻 Running the Web Dashboard
+### 🔎 Smart Protocol Detection
 
-To launch the glassmorphic Cybernetic Web Dashboard:
+The sniffer automatically identifies protocols such as:
 
-### 🪟 Windows (Run as Administrator)
+* TCP
+* UDP
+* ICMP
+* ARP
+* HTTP
+* HTTPS
+* DNS
+
+---
+
+### 📊 Live Analytics
+
+Built-in analytics include:
+
+* **Protocol Distribution Chart**
+* **Top Source IPs**
+* **Top Destination IPs**
+* **Packet Count Metrics**
+* **Real-Time Traffic Insights**
+
+---
+
+### 💾 Multi-Format Logging
+
+Export captured packets into:
+
+| Format | Use Case                     |
+| ------ | ---------------------------- |
+| CSV    | Excel & Spreadsheet Analysis |
+| JSON   | APIs & Data Science          |
+| TXT    | Human-readable logs          |
+
+Logs are automatically stored in:
+
+```txt
+captures/
+```
+
+---
+
+### ⚡ BPF (Berkeley Packet Filter) Support
+
+Efficient packet filtering at the kernel level.
+
+Example filters:
+
+```txt
+tcp
+udp
+icmp
+port 80
+host 192.168.1.1
+```
+
+---
+
+# 🧠 OSI Layer Packet Analysis
+
+The project analyzes packets across multiple layers of the OSI Model.
+
+```txt
+┌──────────────────────────────┐
+│ Layer 7 → Application Layer  │
+│ HTTP / HTTPS / DNS           │
+├──────────────────────────────┤
+│ Layer 4 → Transport Layer    │
+│ TCP / UDP / Ports / Flags    │
+├──────────────────────────────┤
+│ Layer 3 → Network Layer      │
+│ Source IP / Destination IP   │
+├──────────────────────────────┤
+│ Layer 2 → Data Link Layer    │
+│ MAC Address Information      │
+└──────────────────────────────┘
+```
+
+---
+
+# 📦 Libraries Used
+
+| Library               | Purpose                     |
+| --------------------- | --------------------------- |
+| `scapy`               | Packet capturing & decoding |
+| `flask`               | Web server                  |
+| `flask-socketio`      | Real-time communication     |
+| `colorama`            | Colored terminal output     |
+| `tabulate`            | Statistics tables           |
+| `threading`           | Background tasks            |
+| `csv`                 | CSV logging                 |
+| `json`                | JSON export                 |
+| `socket`              | Socket communication        |
+| `datetime`            | Timestamp generation        |
+| `collections.Counter` | Packet statistics           |
+
+---
+
+# 📋 Requirements
+
+| Requirement | Details                              |
+| ----------- | ------------------------------------ |
+| Python      | 3.8+                                 |
+| Windows     | Run as Administrator                 |
+| Linux       | Run using `sudo`                     |
+| Npcap       | Required for Windows packet sniffing |
+
+Download Npcap:
+
+https://npcap.com/
+
+---
+
+# 🚀 Installation
+
+## Step 1: Clone Repository
+
+```bash
+git clone https://github.com/yourusername/network-sniffer.git
+cd network-sniffer
+```
+
+## Step 2: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 💻 Running the Project
+
+## 🌐 Run Web Dashboard
+
+### Windows
+
 ```powershell
 python web_app.py
 ```
 
-### 🐧 Linux
+### Linux
+
 ```bash
 sudo python3 web_app.py
 ```
 
-Once launched, open your web browser and navigate to:
-```
-http://localhost:5000
-```
+Open browser:
 
-*In the dashboard, type a BPF filter (e.g. `tcp` or `port 53`), click **Start** to capture live network cards, click on individual packets to dissect them, switch to **Analytics** to view live charts, or click **PDF** to download a professional session report.*
+```txt
+http://127.0.0.1:5000
+```
 
 ---
 
-## ⚙️ CLI Engine Usage
+## 🖥️ Run CLI Sniffer
 
-If you prefer operating inside the terminal, run `main.py`:
-
-```bash
-python main.py [options]
-```
-
-### Options & Flags
-
-| Flag | Description |
-|---|---|
-| `-i`, `--interface` | Specific network interface to sniff on (e.g., `'eth0'`, `'Wi-Fi'`) |
-| `-p`, `--protocol` | Fast protocol filter shortcut (`tcp`, `udp`, `icmp`, `dns`, `http`, `https`) |
-| `--ip` | Filter traffic containing a specific IP (Source or Destination) |
-| `--port` | Filter traffic containing a specific Port number |
-| `-c`, `--count` | Stop capture automatically after capturing N packets (default: `0` = infinite) |
-| `-l`, `--log` | Automatically export captures to `captures/` as `csv`, `json`, or `txt` |
-
-### CLI Examples
-
-**Sniff everything on default interface:**
 ```bash
 python main.py
 ```
 
-**Filter only TCP traffic and save to a JSON array:**
+---
+
+# ⚙️ CLI Options
+
+| Flag     | Description          |
+| -------- | -------------------- |
+| `-i`     | Network Interface    |
+| `-p`     | Protocol Filter      |
+| `--ip`   | Filter Specific IP   |
+| `--port` | Filter Specific Port |
+| `-c`     | Packet Count         |
+| `-l`     | Log Format           |
+
+---
+
+# 💡 Command Examples
+
+### Capture all traffic
+
 ```bash
-python main.py -p tcp -l json
+python main.py
 ```
 
-**Capture 50 packets on a specific IP address on port 80, then stop:**
+### Capture TCP packets
+
 ```bash
-python main.py --ip 192.168.1.100 --port 80 -c 50
+python main.py -p tcp
 ```
 
-**Sniff on a specific interface with a CSV log:**
+### Capture packets from an IP
+
 ```bash
-python main.py -i eth0 -l csv
+python main.py --ip 192.168.1.1
+```
+
+### Capture packets on a port
+
+```bash
+python main.py --port 80
+```
+
+### Capture 100 packets
+
+```bash
+python main.py -c 100
+```
+
+### Save logs in JSON
+
+```bash
+python main.py -l json
+```
+
+### Combined Example
+
+```bash
+python main.py -i Wi-Fi -p tcp --ip 192.168.1.1 --port 80 -c 50 -l json
 ```
 
 ---
 
-## 📁 Project Structure
+# 📊 Statistics System
 
+Every **15 seconds**, the program automatically generates network statistics including:
+
+* Total Packets
+* Protocol Distribution
+* Source IP Activity
+* Destination IP Activity
+
+Displayed in a clean tabular format using **Tabulate**.
+
+---
+
+# 📤 Terminal Output Format
+
+Example output:
+
+```txt
+[TCP] 192.168.1.10:443 → 192.168.1.5:52344
+Payload: 512 bytes
+Flags: SYN, ACK
 ```
-network-sniffer/
+
+### Color Meaning
+
+| Color  | Meaning |
+| ------ | ------- |
+| Green  | TCP     |
+| Blue   | UDP     |
+| Red    | ICMP    |
+| Yellow | DNS     |
+
+---
+
+# 🌐 Web Dashboard Features
+
+| Feature      | Description           |
+| ------------ | --------------------- |
+| Start        | Start packet capture  |
+| Stop         | Stop packet capture   |
+| Search       | Search packets        |
+| Analytics    | Traffic visualization |
+| PDF Export   | Download report       |
+| Live Updates | WebSocket streaming   |
+
+---
+
+# 📁 Project Structure
+
+```txt
+NETWORK-SNIFFER/
 │
-├── main.py             # CLI Sniffer entry point & BPF assembler
-├── web_app.py          # Flask & Socket.IO web server
-├── packet_analyzer.py  # OSI layer decoder (Layers 2, 3, 4, and 7 decodes)
-├── filters.py          # Berkeley Packet Filter (BPF) filter assembler
-├── statistics.py       # Thread-safe packet counters and metrics
-├── logger.py           # Multi-format logger (CSV, JSON, TXT)
-├── utils.py            # CLI visual assets and banner printing
-├── requirements.txt    # Project dependencies
+├── main.py
+├── web_app.py
+├── packet_analyzer.py
+├── filters.py
+├── logger.py
+├── statistics.py
+├── utils.py
+├── requirements.txt
+├── README.md
+│
+├── captures/
+│
+├── screenshots/
 │
 ├── templates/
-│   └── index.html      # Responsive glassmorphic dashboard frontend
+│   └── index.html
 │
-├── static/
-│   ├── css/
-│   │   └── style.css   # Dark cybersecurity dashboard theme
-│   └── js/
-│       └── app.js      # Socket.IO client, Chart.js engine & jsPDF report builder
-│
-└── README.md           # Documentation
+└── static/
+    ├── css/
+    └── js/
 ```
 
 ---
 
-## ⚠️ Disclaimer
+# 📸 Screenshots
 
-This tool is designed for **educational purposes, academic research, and authorized administrative network monitoring** only. Sniffing traffic on networks without prior written permission is illegal in many jurisdictions. The author and CodeAlpha accept no responsibility for unauthorized or malicious use of this software.
+## 🖥️ Terminal Output
+
+```md
+![Terminal Output](screenshots/terminal.png)
+```
+
+## 🌐 Web Dashboard
+
+```md
+![Web Dashboard](screenshots/dashboard.png)
+```
+
+## 📈 Analytics
+
+```md
+![Analytics](screenshots/analytics.png)
+```
 
 ---
 
-## 🙋‍♂️ Author
+# 🛠️ Troubleshooting
 
-**Deep Tandel**
-Internship Project — [CodeAlpha](https://www.codealpha.tech/)
+### Permission Error
+
+Run terminal as **Administrator** (Windows) or use:
+
+```bash
+sudo
+```
+
+### Scapy Not Found
+
+```bash
+pip install scapy
+```
+
+### Flask Error
+
+```bash
+pip install flask flask-socketio
+```
+
+### Dashboard Not Opening
+
+Check:
+
+```txt
+http://127.0.0.1:5000
+```
+
+---
+
+# ⚠️ Legal Disclaimer
+
+This tool is intended for **educational purposes, internship learning, cybersecurity research, and authorized network monitoring only**.
+
+Do **NOT** use this tool to capture traffic on networks without permission. Unauthorized packet sniffing may violate laws and regulations.
+
+The developer assumes **no responsibility** for misuse.
+
+---
+
+# 👨‍💻 Author
+
+### **Deep Tandel**
+
+**CodeAlpha Internship Project**
+
+GitHub: `https://github.com/Harsh-jethva`
 
 ---
 
 <div align="center">
-  <sub>Made with ❤️ as part of the CodeAlpha Internship Program</sub>
+
+### ⭐ If you like this project, consider giving it a star!
+
+Made with ❤️ during the **CodeAlpha Internship Program**
+
 </div>
