@@ -384,19 +384,23 @@ NETWORK-SNIFFER/
 ## 🖥️ Terminal Output
 
 ```md
-![Terminal Output](screenshots/terminal.png)
+<img width="1281" height="943" alt="image" src="https://github.com/user-attachments/assets/8bca7c6f-0852-48a1-9237-c5c5695e78b1" />
+<img width="1284" height="958" alt="image" src="https://github.com/user-attachments/assets/174b4818-19b9-4691-9175-2307e51cc8d9" />
 ```
 
 ## 🌐 Web Dashboard
 
 ```md
-![Web Dashboard](screenshots/dashboard.png)
+<img width="1918" height="972" alt="image" src="https://github.com/user-attachments/assets/880d6dfc-1400-49a9-a6b5-5d6a4c363382" />
+<img width="1919" height="961" alt="image" src="https://github.com/user-attachments/assets/4562acef-9e87-4d11-a399-2214cab7f45c" />
+<img width="1000" height="786" alt="image" src="https://github.com/user-attachments/assets/e41bc28f-42c9-4682-986a-7277b07d702d" />
+<img width="1005" height="793" alt="image" src="https://github.com/user-attachments/assets/d75c27b8-8292-4a15-b0ec-fa63b3a78f85" />
 ```
 
 ## 📈 Analytics
 
 ```md
-![Analytics](screenshots/analytics.png)
+<img width="1917" height="859" alt="image" src="https://github.com/user-attachments/assets/c05790b4-2cd8-4677-8d65-174ddba96f7a" />
 ```
 
 ---
